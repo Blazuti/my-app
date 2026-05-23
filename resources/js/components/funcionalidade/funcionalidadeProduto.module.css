@@ -1,0 +1,19 @@
+.funcionalidadeProduto {
+    background-color: #fff;
+    line-height: 1.2;
+    padding: 10px;
+}
+p {
+    margin-bottom: 10px;
+}
+
+h4 {
+    margin-bottom: 15px;
+}
+
+summary {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,62 @@
+.containerValor{
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to right, #fff, var(--cor-fundo-laranja));
+    ;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.timeOferta{
+    padding: 5px 10px;
+    font-weight: 400;
+    color: #fff;
+    background-color: var(--cor-laranja);
+
+    display: flex;
+    align-items: center;
+}
+.moeda, .grupoValor, .desconto{
+    color: var(--cor-laranja);
+    font-weight: bold;
+}
+
+.desconto{
+    font-size: normal;
+    font-size: 1.25rem;
+}
+
+.grupoValor{
+    font-size: 1.5rem;
+}
+
+.desconto{
+    background-color: var(--cor-fundo-laranja);
+    border-radius: 4px;
+    padding: 4px 2px;
+    border: 1px solid var(--cor-laranja);
+}
+
+.valorAnterior{
+    color: var(--cor-cinza);
+    text-decoration: line-through;
+    font-size: 1.2rem;
+}
+
+.vendidos{
+    font-weight: 400;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.timeOferta > [class^="material-symbols"]{
+    font-size: 18px;
+    padding: 0px;
+    margin: 5px -2px 0px -2px;
+    background-color: transparent;
+    display: flex;
+    align-items: flex-end;
+}

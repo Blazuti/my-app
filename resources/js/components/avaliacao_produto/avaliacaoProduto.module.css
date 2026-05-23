@@ -1,0 +1,70 @@
+.avaliacaoProduto {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.avaliacao {
+    display: flex;
+    align-items: center;
+}
+.avaliacao [class^='material-symbols-outlined'] {
+    background-color: transparent;
+    color: var(--cor-amarela);
+    font-size: 24px;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+}
+
+h2 {
+    margin: 5px 0px;
+}
+
+
+
+.vermais {
+    display: flex;
+    align-items: center;
+}
+p {
+    margin: 5px;
+    font-weight: 100;
+}
+
+.fotoAvaliacao {
+    width: 120%;
+    height: 180px;
+    margin-top: 10px;
+    background-image: url('../../../../storage/app/public/image/avaliacao_produto.png');
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.verTudo {
+    background-color: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.verTudo > span {
+    color: var(--cor-cinza);
+}
+
+.verTudo > [class^='material-symbols']{
+    margin-top: 4px;
+    color: var(--cor-cinza);
+}
+

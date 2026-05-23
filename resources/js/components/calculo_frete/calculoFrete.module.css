@@ -1,0 +1,21 @@
+.calculoFrete {
+    background-color: #ffffff;
+    height: fit-content;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.calculoFrete [class^="material-symbols"] {
+    color: var(--cor-verde);
+    font-size: 30px;
+}
+
+.calculoFrete > p {
+    display: flex;
+    height: fit-content;
+    margin: auto 2px;
+    font-weight: 500;
+    color: var(--cor-verde);
+}

@@ -1,0 +1,84 @@
+.vendedor {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerImg {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.foto {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    background-image: url('../../../../storage/app/public/image/image.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.imgVendedor {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    p {
+        line-height: 0.5;
+        font-size: 0.9rem;
+        color: #888;
+        text-align: left;
+    }
+
+    h6 {
+        font-size: 1.1rem;
+        color: #333;
+        margin-left: 10px;
+    }
+}
+
+.verLoja {
+    margin: auto 0px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--cor-laranja);
+    border-radius: 4px;
+}
+
+.infoVendedor {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    
+}
+.containerVendedor {
+    margin: 10px 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: fit-content;
+
+    h5{
+        margin-bottom: 0px;
+        font-size: 1.2rem;
+        color: var(--cor-cinza);
+    }
+
+    p {
+        margin-top: 0px;
+        font-size: 0.7rem;
+        color: var(--cor-cinza);
+    }
+}
+
+.containerVendedor:nth-child(2) {
+    border-left: 1px solid #888;
+    border-right: 1px solid #888;
+}

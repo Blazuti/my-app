@@ -1,0 +1,40 @@
+:root {
+    --cor-laranja: #f6412d;
+    --cor-fundo-laranja: #f53e2d35;
+    --cor-verde: #3bb2a4;
+    --cor-cinza: rgb(73, 73, 73);
+    --cor-fundo-cinza: #f5f5f5;
+    --cor-amarela: #ffbc1c;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: auto;
+    background-color: var(--cor-fundo-cinza);
+    overflow-x: hidden;
+}
+
+@media screen and (min-width: 768px) and (min-height: 500px) {
+    .main-section {
+        
+        width: 80%;
+        max-width: 1250px;
+        height: auto;
+        margin: auto;
+        background-color: white;
+        overflow-x: hidden;
+    }
+
+    .welcome {
+        width: 100%;
+        height: auto;
+        background-color: var(--cor-fundo-cinza);
+    }
+}
