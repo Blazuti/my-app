@@ -1,0 +1,35 @@
+.containerFrete {
+    padding: 20px 40px;
+    width: 60%;
+    line-height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    span {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--cor-cinza);
+    }
+}
+
+.frete, .icon, .estado {
+
+    max-width: 33%;
+    display: flex;
+    color: var(--cor-cinza);
+   
+}
+
+.icon {
+    span {
+        margin-right: 20px;
+    }
+}
+
+.icon [class~='material-symbols'] {
+    color: var(--cor-verde);
+}
+

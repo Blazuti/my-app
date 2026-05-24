@@ -35,8 +35,7 @@
         margin-right: 10px;
         border: none;
         border-radius: 2px;
-        background-image: url('../../../../storage/app/public/image/serch-component.png');
-        background-color: white;
+        background-image: url('../../../../../storage/app/public/image/serch-component.png');
         background-size: 60px;
         background-repeat: no-repeat;
         background-position: right center;
