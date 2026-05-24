@@ -1,35 +1,56 @@
 .containerFrete {
     padding: 20px 40px;
-    width: 60%;
+    width: 70%;
     line-height: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
 
-    span {
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: var(--cor-cinza);
-    }
+.containerFrete span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-cinza);
 }
 
 .frete, .icon, .estado {
 
     max-width: 33%;
     display: flex;
-    color: var(--cor-cinza);
+    color: var(--cor-cinza-medio);
+    font-size: 0.9rem;
+    font-weight: 500;
+    
    
 }
 
-.icon {
-    span {
-        margin-right: 20px;
-    }
+
+.nomeEstado {
+    font-weight: bold;
+    margin: 0px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.icon span {
+    margin-right: 20px;
 }
 
 .icon [class~='material-symbols'] {
     color: var(--cor-verde);
 }
 
+
+.valor{
+    color: var(--cor-verde);
+    font-weight: bold;
+
+}
+
+.valores span{
+    display: flex;
+    justify-content: flex-start;
+    color: var(--cor-verde);
+    font-size: 1rem;
+}

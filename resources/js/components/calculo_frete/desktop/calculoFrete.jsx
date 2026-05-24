@@ -8,18 +8,19 @@ export default function CalculoFrete() {
                 <div className={Style.frete}>Frete</div>
                 <div>
                     <div className={Style.icon}>
-                        <span class="material-symbols">
+                        <span className="material-symbols">
                             delivery_truck_speed
                         </span>
-                        <span className={Style.frete}>Frete:</span>
+                        <div className={Style.frete}>Frete:</div>
                     </div>
-                    <span className={Style.frte}>Frete</span>
+                    <div className={Style.frete}>Frete</div>
                 </div>
                 <div className={Style.estado}>
                     <div className={Style.estadoSp}>
-                        <div><span className={Style.nomeEstado}>São Paulo</span></div>
-                    <span className={Style.valorAnterior}>R$18,98</span>
-                    <span className={Style.valor}>R$0,00</span>
+                        <div className={Style.nomeEstado}><span>São Paulo</span></div>
+                    <div className={Style.valores}>
+                        <span className={Style.valor}>Grátis</span>
+                    </div>
                     
                     </div>
 
