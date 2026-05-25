@@ -82,10 +82,29 @@
         font-family: "Roboto:ital", Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: #ee4d2d;
+    display: flex;
+    gap: 5px;
     }
 
     .vendidos {
         display: none;
     }
 
+    .valorAnterior {
+        width: max-content;
+        color: var(--cor-cinza-claro);
+        font-weight: 400;
+        font-size: 0.9rem;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        
+    }
+    .desconto {
+        background-color: transparent;
+        border: none;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+    }
 }

@@ -1,5 +1,5 @@
-.containerFrete {
-    padding: 20px 40px;
+.container {
+    padding: 20px;
     width: 70%;
     line-height: 2rem;
     display: flex;
@@ -7,14 +7,14 @@
     justify-content: space-between;
 }
 
-.containerFrete span {
+.container span {
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--cor-cinza);
 }
 
-.frete, .icon, .estado {
+.containerFrete, .icon, .estado {
 
     max-width: 33%;
     display: flex;
@@ -53,4 +53,8 @@
     justify-content: flex-start;
     color: var(--cor-verde);
     font-size: 1rem;
+}
+
+.frete {
+    text-align: right;
 }

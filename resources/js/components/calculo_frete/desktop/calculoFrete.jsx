@@ -4,8 +4,8 @@ import Style from './calculoFrete.module.css';
 export default function CalculoFrete() {
     return (
         <>
-            <div className={Style.containerFrete}>
-                <div className={Style.frete}>Frete</div>
+            <div className={Style.container}>
+                <div className={Style.containerfrete}>Frete</div>
                 <div>
                     <div className={Style.icon}>
                         <span className="material-symbols">

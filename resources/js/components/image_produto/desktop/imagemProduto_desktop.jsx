@@ -3,13 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Style from './imagem_produto_desktop.module.css';
 import DescricaoProduto from '../../descricao/descricao';
 import ValorProduto from '../../valor_produto/mobile/valorProduto_mobile';
-import ValorFrete from '../../calculo_frete/desktop/calculoFrete'
+import ValorFrete from '../../calculo_frete/desktop/calculoFrete';
+import CorProduto from '../../cor_produto/cor_produto';
 const img01 =
-    'https://down-br.img.susercontent.com/file/br-11134207-81zu6-ml2wpzd74001e8@resize_w900_nl.webp';
+    'https://down-br.img.susercontent.com/file/br-11134207-7r98o-lomqjeb9ouk2cc@resize_w900_nl.webp';    
 const img02 =
-    'https://down-br.img.susercontent.com/file/br-11134207-81zun-ml2wpzd79m9te2@resize_w900_nl.webp';
+    'https://down-br.img.susercontent.com/file/sg-11134201-825a0-mev9mf7ucxs258@resize_w900_nl.webp';
 const img03 =
-    'https://down-br.img.susercontent.com/file/br-11134207-81zun-ml2wpzd79m9te2@resize_w900_nl.webp';
+    'https://down-br.img.susercontent.com/file/sg-11134201-825b0-mev9mac2445c79@resize_w900_nl.webp';
+const img04 =
+    'https://down-br.img.susercontent.com/file/sg-11134201-82588-mev9mbhi53pg18@resize_w900_nl.webp';
+const img05 =
+    'https://down-br.img.susercontent.com/file/sg-11134201-825a6-mev9mchqu7lze2@resize_w900_nl.webp';
+const img06 =
+    'https://down-br.img.susercontent.com/file/sg-11134201-8259v-mev9me5zwxdv64@resize_w900_nl.webp';
+const img07 = 'https://down-br.img.susercontent.com/file/sg-11134201-825at-mev9m8v51fyc93@resize_w900_nl.webp';
 
 export default function ImagemProduto_desktop() {
     return (
@@ -44,11 +52,34 @@ export default function ImagemProduto_desktop() {
                         </div>
                         <div className="carousel-item">
                             <img
-                                src={img03}
+                                src={img04}
                                 className="d-block w-100"
                                 alt="..."
                             />
                         </div>
+                        <div className="carousel-item">
+                            <img
+                                src={img05}
+                                className="d-block w-100"
+                                alt="..."
+                            />
+                        </div>
+                        <div className="carousel-item">
+                            <img
+                                src={img06}
+                                className="d-block w-100"
+                                alt="..."
+                            />
+                        </div>
+                        <div className="carousel-item">
+                            <img
+                                src={img07}
+                                className="d-block w-100"
+                                alt="..."
+                            />
+                        </div>
+                      
+                       
                         <button
                             className="carousel-control-prev"
                             type="button"
@@ -75,6 +106,23 @@ export default function ImagemProduto_desktop() {
                         </button>
                     </div>
                 </div>
+                    <section className={Style.containerImg}>
+                        <div className={Style.localImg}>
+                            <img src={img01} alt="" />
+                        </div>
+                        <div className={Style.localImg}>
+                            <img src={img02} alt="" />
+                        </div>
+                        <div className={Style.localImg}>
+                            <img src={img03} alt="" />
+                        </div>
+                        <div className={Style.localImg}>
+                            <img src={img04} alt="" />
+                        </div>
+                        <div className={Style.localImg}>
+                            <img src={img05} alt="" />
+                        </div>
+                    </section>
             </div>
             <div className={Style.containerDescricaoProduto}>
                 <DescricaoProduto />
@@ -91,8 +139,9 @@ export default function ImagemProduto_desktop() {
                         <span className={Style.avaliacao}>Avaliações</span>
                     </div>
                 </div>
-                <ValorProduto/>
-                <ValorFrete/>
+                <ValorProduto />
+                <ValorFrete />
+                <CorProduto />
             </div>
         </div>
     );
