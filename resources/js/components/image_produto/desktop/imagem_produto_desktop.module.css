@@ -88,3 +88,13 @@
 .localImg:hover {
     border: 2px solid var(--cor-laranja);
 }
+
+video .bootstrap {
+
+    object-fit: cover;
+}
+
+.video {
+    display: flex;
+    align-items: center;
+}

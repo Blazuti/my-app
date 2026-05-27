@@ -5,7 +5,8 @@ import DescricaoProduto from '../../descricao/descricao';
 import ValorProduto from '../../valor_produto/mobile/valorProduto_mobile';
 import ValorFrete from '../../calculo_frete/desktop/calculoFrete';
 import CorProduto from '../../cor_produto/cor_produto';
-const img01 =
+
+const img01 = 'https://down-br.img.susercontent.com/file/br-11134207-7r98o-lomqjeb9ouk2cc@resize_w900_nl.webp';
     'https://down-br.img.susercontent.com/file/br-11134207-7r98o-lomqjeb9ouk2cc@resize_w900_nl.webp';    
 const img02 =
     'https://down-br.img.susercontent.com/file/sg-11134201-825a0-mev9mf7ucxs258@resize_w900_nl.webp';
@@ -18,6 +19,7 @@ const img05 =
 const img06 =
     'https://down-br.img.susercontent.com/file/sg-11134201-8259v-mev9me5zwxdv64@resize_w900_nl.webp';
 const img07 = 'https://down-br.img.susercontent.com/file/sg-11134201-825at-mev9m8v51fyc93@resize_w900_nl.webp';
+const video = 'https://down-bs-br.vod.susercontent.com/api/v4/11110106/mms/sg-11110106-6va2n-mlxuaxlf26fjae.16000081773770923.mp4';
 
 export default function ImagemProduto_desktop() {
     return (
@@ -30,6 +32,20 @@ export default function ImagemProduto_desktop() {
                 >
                     <div className="carousel-inner">
                         <div className="carousel-item active">
+                            <div className="ratio ratio-1x1">
+                                <div className={Style.video}>
+                                    <video
+                                        src={video}
+                                        className="d-block w-100"
+                                        alt="..."
+                                        autoPlay
+                                        muted
+                                        loop
+                                                               />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="carousel-item">
                             <img
                                 src={img01}
                                 className="d-block w-100"
