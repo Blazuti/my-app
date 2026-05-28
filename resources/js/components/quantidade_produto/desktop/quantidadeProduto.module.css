@@ -1,0 +1,43 @@
+.containerQtdProduto{
+    color: var(--cor-cinza-medio);
+    width: 70%;
+    margin-left: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.menosProduto{
+    height: 30px;
+    display: flex;
+    border-right: 2px solid var(--cor-fundo-cinza);
+    padding: 0px 7px;
+}
+
+.maisProduto {
+    height: 30px;
+    display: flex;
+    border-left: 2px solid var(--cor-fundo-cinza);
+    padding: 0px 7px;
+}
+
+.selectQtd {
+    height: 30px;
+    border: 2px solid var(--cor-fundo-cinza);
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.visorQtd {
+    height: 30px;
+    min-width: 45px;
+    padding: 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.maisProduto, .menosProduto:hover {
+    cursor: pointer;
+}

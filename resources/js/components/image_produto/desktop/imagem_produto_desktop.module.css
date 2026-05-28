@@ -73,10 +73,11 @@
 
 .localImg{
     width: 20%;
-    height: 100px;
+    height: 80px;
     margin-right: 5px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .localImg img{
