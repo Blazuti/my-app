@@ -9,6 +9,10 @@
     justify-content: center;
     align-items: center;
 }
+
+details {
+    margin-bottom: 50px;
+}
 .mensage [class^="material-symbols"]{
     display: flex;
     justify-content: center;

@@ -7,8 +7,11 @@ p {
     margin-bottom: 10px;
 }
 
-h4 {
+h5 {
     margin-bottom: 15px;
+    background-color: var(--cor-fundo-cinza);
+    line-height: 2;
+    padding-left: 10px;
 }
 
 summary {

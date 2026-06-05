@@ -5,7 +5,7 @@ export default function FuncionalidadeProduto() {
     return (
         <>
             <div className={Style.funcionalidadeProduto}>
-                <h4>Descrição Do Produto</h4>
+                <h5>Descrição Do Produto</h5>
                 <p>Sistema operacional Android 14, One UI 6.1</p>
                 <p>Tamanho da memória RAM instalada 12 GB</p>
                 <p>Modelo da CPU Snapdragon</p>

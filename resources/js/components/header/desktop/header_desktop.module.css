@@ -86,7 +86,7 @@
 
     .subNave {
         max-width: 81%;
-        margin: auto;
+        margin: 0px auto -15px auto;
         height: fit-content;
         background-color: white;
         display: flex;

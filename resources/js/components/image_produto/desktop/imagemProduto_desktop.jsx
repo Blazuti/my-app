@@ -6,9 +6,9 @@ import ValorProduto from '../../valor_produto/mobile/valorProduto_mobile';
 import ValorFrete from '../../calculo_frete/desktop/calculoFrete';
 import CorProduto from '../../cor_produto/cor_produto';
 import QuantidadeProduto from '../../quantidade_produto/desktop/quantidade_produto_desktop'
+import Footer from '../../footer/footer';
 
-const img01 = 'https://down-br.img.susercontent.com/file/br-11134207-7r98o-lomqjeb9ouk2cc@resize_w900_nl.webp';
-    'https://down-br.img.susercontent.com/file/br-11134207-7r98o-lomqjeb9ouk2cc@resize_w900_nl.webp';    
+const img01 = 'https://down-br.img.susercontent.com/file/br-11134207-7r98o-lomqjeb9ouk2cc@resize_w900_nl.webp'; 
 const img02 =
     'https://down-br.img.susercontent.com/file/sg-11134201-825a0-mev9mf7ucxs258@resize_w900_nl.webp';
 const img03 =
@@ -160,6 +160,7 @@ export default function ImagemProduto_desktop() {
                 <ValorFrete />
                 <CorProduto />
                 <QuantidadeProduto />
+                <Footer />
             </div>
         </div>
     );

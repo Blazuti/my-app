@@ -1,18 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,900&display=swap');
-p{
+.Descricao {
     padding: 5px 10px;
 }
 
-@media screen and (min-width: 768px) and (min-height: 500px) {
-    .descricaoProduto {
-        p{
-        font-family: 'Roboto:ital', Arial, Helvetica, sans-serif;
-        font-size: 1.25rem;
-        font-weight: 550;
-        font-style: normal;
-        color: var(--cor-fonte-preto);
-        }
+.indicado{
+        display: none;
     }
 
+@media screen and (min-width: 768px) and (min-height: 500px) {
+    .descricaoProduto {
+        display: flex;
+    }
 
+    .indicado {
+        display: inline;
+    }
+
+    .indicado img {
+    width: 8%;
+    height: fit-content;
+    margin: 0px 5px;
+}
+.descricaoProduto span {
+    font-family: 'Roboto:ital', Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 550;
+    font-style: normal;
+    color: var(--cor-fonte-preto);
+}
+    
 }

@@ -1,0 +1,13 @@
+.rodape {
+    width: 100%;
+    height: auto;
+}
+
+.rodape img {
+    width: 100%;
+    height: auto;
+}
+
+.rodape img:hover {
+    cursor: pointer;
+}

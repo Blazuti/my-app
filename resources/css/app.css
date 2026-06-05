@@ -1,6 +1,7 @@
 :root {
     --cor-laranja: #f6412d;
     --cor-fundo-laranja: #f53e2d35;
+    --cor-fundo-laranja-claro: #ffeee8;
     --cor-verde: #3bb2a4;
     --cor-cinza: rgb(73, 73, 73);
     --cor-cinza-medio: #636363;
@@ -26,19 +27,22 @@ html {
 
 @media screen and (min-width: 768px) and (min-height: 500px) {
     .main-section {
-        
         width: 80%;
         padding: 1%;
         max-width: 1250px;
         height: auto;
-        margin: auto;
+        margin: 15px auto 0px auto;
         background-color: white;
         overflow-x: hidden;
+        box-shadow: 0px 5px 2px -5px rgba(0, 0, 0, 0.1);
     }
-
     .welcome {
         width: 100%;
         height: auto;
         background-color: var(--cor-fundo-cinza);
+    }
+
+    .rodape {
+        margin-top: 30px;
     }
 }
