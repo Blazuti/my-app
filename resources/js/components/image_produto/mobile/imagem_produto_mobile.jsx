@@ -1,6 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Style from './imagemProduto_mobile.module.css';
 const img01 = 'https://down-br.img.susercontent.com/file/br-11134207-7r98o-lomqjeb9ouk2cc@resize_w900_nl.webp';
       
 const img02 =
@@ -19,6 +20,7 @@ const video = 'https://down-bs-br.vod.susercontent.com/api/v4/11110106/mms/sg-11
 
 export default function AvaliacaoProduto() {
     return (
+        <>
         <div
             id="carouselExampleAutoplaying"
             className="carousel slide"
@@ -78,5 +80,23 @@ export default function AvaliacaoProduto() {
                 </button>
             </div>
         </div>
+             <section className={Style.containerImg}>
+                        <div className={Style.localImg}>
+                            <img src={img01} alt="" />
+                        </div>
+                        <div className={Style.localImg}>
+                            <img src={img02} alt="" />
+                        </div>
+                        <div className={Style.localImg}>
+                            <img src={img03} alt="" />
+                        </div>
+                        <div className={Style.localImg}>
+                            <img src={img04} alt="" />
+                        </div>
+                        <div className={Style.localImg}>
+                            <img src={img05} alt="" />
+                        </div>
+                    </section>
+                    </>
     );
 }

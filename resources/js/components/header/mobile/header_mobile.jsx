@@ -6,24 +6,30 @@ export default function Header() {
     const { scrollYProgress } = useScroll();
     const bg = useTransform(
         scrollYProgress,
-        [0, 0.05],
+        [0, 0.1],
         ['rgba(255,255,255,0)', 'rgba(255,255,255,1)']
     );
     const shadow = useTransform(
         scrollYProgress,
-        [0, 0.05],
+        [0, 0.1],
         ['0px 0px 0px rgba(0,0,0,0)', '0px 8px 24px rgba(0,0,0,0.08)']
     );
     const iconColor = useTransform(
         scrollYProgress,
-        [0, 0.05],
+        [0, 0.1],
         ['#ffffff', 'var(--cor-laranja)']
     );
 
     const back = useTransform(
         scrollYProgress,
-        [0, 0.05],
+        [0, 0.8],
         ['rgba(0, 0, 0, 0.371)', 'transparent']
+    );
+
+    const backInput = useTransform(
+        scrollYProgress,
+        [0, 0.1],
+        ['transparent', 'var(--cor-fundo-cinza)']
     );
 
     
@@ -36,11 +42,12 @@ export default function Header() {
             <motion.span className="material-symbols" style={{ color: iconColor, background: back }}>arrow_back</motion.span>
 
             <div className={Style.busca}>
-                <input
+                <motion.input
                     className={Style.mobile}
                     type="text"
                     placeholder="Buscar mais na Shopee"
                     name="procura-produto"
+                    style={{ background: backInput }}
                 />
             </div>
 

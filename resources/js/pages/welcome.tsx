@@ -1,5 +1,6 @@
 import React from 'react';
 import DescricaoProduto from '../components/descricao/descricao';
+import ValorProduto from '@/components/valor_produto/mobile/valorProduto_mobile';
 import AvaliacaoProduto from '../components/avaliacao_produto/mobile/avaliacao_mobile';
 import AvaliacaoProduto_desktop from '../components/avaliacao_produto/desktop/avaliacao_desktop';
 import FuncionalidadeProduto from '../components/funcionalidade/funcionalidadeProduto';
@@ -28,7 +29,9 @@ export default function Welcome() {
                         <ImagemProduto_desktop />
                     )}
                 </>
-
+                    <>
+                    <ValorProduto />
+                    </>
                 <>{device === 'mobile' ? <DescricaoProduto /> : ''}</>
 
                 <>

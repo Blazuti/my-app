@@ -17,7 +17,7 @@ export default function FuncionalidadeProduto() {
                 <p>Operadora sem fio desbloqueada para todas as operadoras</p>
 
                 <details>
-                    <summary>Ver mais</summary>
+                    <summary>Ver Mais</summary>
                     <p>SO: Android 14, One Ul 6.1</p>
                     <p>RAM: 12 GB</p>
                     <p>Tecnologias de comunicação sem fio: Celular</p>
