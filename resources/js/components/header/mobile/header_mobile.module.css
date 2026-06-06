@@ -1,6 +1,6 @@
 .containerHeader {
     width: 100vw;
-    height: 50px;
+    height: 70px;
     margin-top: 10px;
 
     display: flex;
@@ -8,7 +8,7 @@
     align-items: center;
     padding: 0 10px;
     position: fixed;
-    top: 0;
+    top: -10px;
     left: 0;
     z-index: 1000;
 }
