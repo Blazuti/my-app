@@ -107,9 +107,16 @@
         /* Completeness */
         // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
         "skipLibCheck": true /* Skip type checking all .d.ts files. */,
-        //"baseUrl": ".",
+        "baseUrl": ".",
         "paths": {
-            "@/*": ["./resources/js/*"]
+            "@/*": ["./resources/js/*"],
+            "@/components": ["./resources/js/components"],
+            "@/hooks": ["./resources/js/hooks"],
+            "@/lib": ["./resources/js/lib"],
+            "@/pages": ["./resources/js/pages"],
+            "@/types": ["./resources/js/types"],
+            "@/actions": ["./resources/js/actions"],
+            "@/wayfinder": ["./resources/js/wayfinder"]
         },
         "jsx": "react-jsx"
     },

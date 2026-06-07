@@ -7,7 +7,7 @@ import ValorFrete from '../../calculo_frete/desktop/calculoFrete';
 import CorProduto from '../../cor_produto/cor_produto';
 import QuantidadeProduto from '../../quantidade_produto/desktop/quantidade_produto_desktop'
 import Footer from '../../footer/footer';
-import InfoProduto from '../../../infoProduto'
+import {InfoProduto} from '../../../infoProduto'
 
 export default function ImagemProduto_desktop() {
     return (
