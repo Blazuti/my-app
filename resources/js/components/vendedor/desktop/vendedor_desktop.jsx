@@ -1,15 +1,14 @@
 import React from 'react';
 import Style from './vendedor.module.css';
 import imgInfoVendedor from '../../../../../storage/app/public/image/infoVendedor.png';
-
-const imgVendedor = "https://down-br.img.susercontent.com/file/br-11134216-81z1k-mfc70qq45xc61c@resize_w160_nl.webp"
+import {InfoProduto} from '@/infoProduto'
 export default function Vendedor() {
     return (
         <>
             <div className={Style.vendedor}>
                 <div className={Style.descVendedor}>
                     <div className={Style.imgVendedor}>
-                        <img src={imgVendedor} alt="Vendedor" />
+                        <img src={InfoProduto.ImgVendedor} alt="Vendedor" />
                     </div>
                     <div className={Style.nomeVendedor}>
                         <h4>Vendedor</h4>

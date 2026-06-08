@@ -11,6 +11,15 @@ export const InfoProduto = {
     DescricaoProduto:
         'BML S26 Ultra Smartphone 512 GB+12GB De Ram (8 Dinâmica) 5G LTE Wi-fi, Câmera 108MP',
 
+    ImgVendedor: 'https://down-br.img.susercontent.com/file/br-11134216-81z1k-mfc70qq45xc61c@resize_w160_nl.webp',
+
+    Valor: '24,90',
+
+    ValorAnterior: '32,50',
+
+    Desconto: '-10%',
+
+    Moeda: 'R$'
     
 };
 

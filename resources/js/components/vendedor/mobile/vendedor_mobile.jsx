@@ -1,6 +1,6 @@
 import React from 'react';
 import Style from './vendedor.module.css';
-
+import {InfoProduto} from '@/infoProduto'
 
 export default function Vendedor() {
     return (
@@ -8,7 +8,9 @@ export default function Vendedor() {
             <div className={Style.vendedor}>
                 <div className={Style.containerImg}>
                     <div className={Style.imgVendedor}>
-                        <div className={Style.foto}></div>
+                        <div className={Style.foto}>
+                            <img src={InfoProduto.ImgVendedor} alt="Vendedor" />
+                        </div>
                         <span>
                             <h6>W.A_VARIEDADES</h6>
                             <p>Ativo há 15 minutos</p>

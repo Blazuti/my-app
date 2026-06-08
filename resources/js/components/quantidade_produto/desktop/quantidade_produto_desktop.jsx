@@ -1,7 +1,7 @@
-import React from "react";
 import Style from "./quantidadeProduto.module.css"
-
+import { useAdicionaProduto } from '@/hooks/adicionaProduto'
 export default function QuantidadeProduto() {
+    const { quantidade, incrementar, decrementar } = useAdicionaProduto();
 
     return (
         <section className={Style.containerQtdProduto}>
@@ -9,9 +9,9 @@ export default function QuantidadeProduto() {
                 Quantidade
             </div>
             <div className={Style.selectQtd}>
-                <div className={Style.menosProduto}>-</div>
-                <div className={Style.visorQtd}>2</div>
-                <div className={Style.maisProduto}>+</div>
+                <div className={Style.menosProduto} onClick={decrementar}>-</div>
+                <div className={Style.visorQtd}>{quantidade}</div>
+                <div className={Style.maisProduto} onClick={incrementar}>+</div>
             </div>
             <div className={Style.estoque}>
                 Estoque Disponivel

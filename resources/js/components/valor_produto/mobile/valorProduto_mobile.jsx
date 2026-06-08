@@ -1,5 +1,6 @@
 import React from 'react';
 import Style from './valorProduto.module.css';
+import { InfoProduto } from '@/infoProduto';
 
 export default function ValorProduto() {
     return (
@@ -11,10 +12,10 @@ export default function ValorProduto() {
             </div>
             <div className={Style.containerValor}>
                 <div className={Style.grupoValor}>
-                    <span className={Style.moeda}>R$</span>
-                    <span className={Style.valor}>750,00</span>
-                    <span className={Style.valorAnterior}>675,00</span>
-                    <span className={Style.desconto}>-10%</span>
+                    <span className={Style.moeda}>{InfoProduto.Moeda}</span>
+                    <span className={Style.valor}>{InfoProduto.Valor}</span>
+                    <span className={Style.valorAnterior}>{InfoProduto.ValorAnterior}</span>
+                    <span className={Style.desconto}>{InfoProduto.Desconto}</span>
                 </div>
                 <div className={Style.vendidos}>
                     <span>5mil+ Vendido(s)</span>

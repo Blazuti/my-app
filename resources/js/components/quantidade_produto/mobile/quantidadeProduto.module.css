@@ -1,0 +1,55 @@
+.containerQuantidade {
+    width: 100vw;
+    height: 350px;
+    border-radius: 20px 20px 0px 0px;
+    position: absolute;
+    bottom: 0px;
+    background-color: white;
+    overflow-y: hidden;
+    display: flex;
+    align-items: space-between;
+    flex-flow: column nowrap;
+}
+
+.comprar {
+    margin: auto;
+    width: 90%;
+    height: 35px;
+    text-align: center;
+    font-size: 18px;
+    background-color: var(--cor-laranja);
+    color: #fff;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ajuste {
+    margin-left: -15px;
+}
+
+.imgProduto {
+    width: 30%;
+    height: auto;
+}
+
+.imgProduto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.info {
+    width: 100%;
+    height: auto;
+    display: flex;
+
+}
+
+.valor {
+    width: 100%;
+    margin-top: -35px;
+}
+
