@@ -3,9 +3,10 @@ import Style from "./quantidadeProduto.module.css"
 import CorProduto from "../../cor_produto/desktop/cor_produto_desktop"
 import Quantidade from "../../quantidade_produto/desktop/quantidade_produto_desktop"
 import { InfoProduto } from "@/infoProduto";
-import ValorProduto from "@/components/valor_produto/mobile/valorProduto_mobile";
+import useComprarMobile from '../../../togle';
 
 export default function quantidadeProduto_mobile() {
+const { isOpen, toggleOpen } = useComprarMobile();
 
     return (
 
@@ -15,7 +16,16 @@ export default function quantidadeProduto_mobile() {
                     <img src={InfoProduto.img01} alt="" />
                 </div>
                 <div className={Style.valor}>
-                    <ValorProduto/>
+                    <div className={Style.close} onClick={toggleOpen}>
+                        <span class="material-symbols">
+                        close
+                        </span>
+                    </div>
+                    <span className={Style.valorAtual}>
+                        {InfoProduto.Moeda}
+                        {InfoProduto.Valor}
+                    </span>
+                        <span className={Style.valorAnterior}>{InfoProduto.ValorAnterior}</span>
                 </div>
             </div>
             <div className={Style.ajuste}>

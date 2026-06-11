@@ -1,12 +1,16 @@
 import React from 'react';
 import Style from './footer.module.css';
+import useComprarMobile from '../../../togle';
 import QuantidadeProduto from "../../quantidade_produto/mobile/quantidadeProduto_mobile"
+
 export default function Footer() {
+ const { isOpen, toggleOpen } = useComprarMobile();
+
 
     return (
         <>
             <div className={Style.containerFooter}>
-            <QuantidadeProduto/>
+           {isOpen == true ? <QuantidadeProduto/> : null}
                 <div className={Style.buttonLeft}>
                     <div className={Style.mensage}>
                         <div className="material-symbols">message</div>
@@ -16,7 +20,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className={Style.buttonRight}>
-                    <div className={Style.buy}>
+                    <div className={Style.buy} onClick={toggleOpen} >
                         <p>Compre agora</p>
                     </div>
                 </div>

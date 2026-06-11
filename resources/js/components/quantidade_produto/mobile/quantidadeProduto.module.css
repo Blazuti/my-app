@@ -1,6 +1,6 @@
 .containerQuantidade {
     width: 100vw;
-    height: 350px;
+    height: 300px;
     border-radius: 20px 20px 0px 0px;
     position: absolute;
     bottom: 0px;
@@ -28,6 +28,8 @@
 
 .ajuste {
     margin-left: -15px;
+    max-width: 90%;
+    object-fit: contain;
 }
 
 .imgProduto {
@@ -50,6 +52,33 @@
 
 .valor {
     width: 100%;
-    margin-top: -35px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    background-image: linear-gradient(to right, #fff, var(--cor-fundo-laranja));
 }
 
+.valorAtual {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--cor-laranja);
+}
+
+.valorAnterior {
+    padding-left: 5px;
+    text-decoration: line-through;
+    font-weight: 500;
+    color: var(--cor-cinza-escuro);
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+}
+
+.close [class~='material-symbols'] {
+    font-size: 28px;
+    color: var(--cor-cinza-medio);
+}
