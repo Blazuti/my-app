@@ -64,19 +64,8 @@
 
 
 @media screen and (min-width: 768px) and (min-height: 500px) {
-    .timeOferta{
-        display: none;
-    }
 
-    .containerValor {
-        background: #FAFAFA;
-        margin-top: 10px;
-        padding: 30px;
-        
-        display: flex;
-        align-items: center;
-        
-    }
+
 
     .grupoValor, .moeda{
         font-size: 1.8rem;
@@ -87,9 +76,7 @@
     gap: 5px;
     }
 
-    .vendidos {
-        display: none;
-    }
+
 
     .valorAnterior {
         width: max-content;

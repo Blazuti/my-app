@@ -2,15 +2,16 @@ import React from 'react';
 import Style from './footer.module.css';
 import useComprarMobile from '../../../togle';
 import QuantidadeProduto from "../../quantidade_produto/mobile/quantidadeProduto_mobile"
+import { AnimatePresence } from 'framer-motion';
 
 export default function Footer() {
- const { isOpen, toggleOpen } = useComprarMobile();
+ const { isOpen, setIsOpen, toggleOpen } = useComprarMobile();
 
 
     return (
         <>
             <div className={Style.containerFooter}>
-           {isOpen == true ? <QuantidadeProduto/> : null}
+           <AnimatePresence>{isOpen && <QuantidadeProduto fechar={() => setIsOpen(false)} />}</AnimatePresence>
                 <div className={Style.buttonLeft}>
                     <div className={Style.mensage}>
                         <div className="material-symbols">message</div>

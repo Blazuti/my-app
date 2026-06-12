@@ -7,8 +7,8 @@ export default function useComprarMobile() {
     const [isOpen, setIsOpen] = useState(false);
  
     // Função simples para alternar entre true e false
-  const toggleOpen = () => setIsOpen(prev => !prev);
-
+  const toggleOpen = () => setIsOpen(!isOpen);
+  console.log(isOpen)
   // Retornamos o estado atual e a função de alternar
   return { isOpen, toggleOpen, setIsOpen };
 }

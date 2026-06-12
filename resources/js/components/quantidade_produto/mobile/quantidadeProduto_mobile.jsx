@@ -4,11 +4,35 @@ import CorProduto from "../../cor_produto/desktop/cor_produto_desktop"
 import Quantidade from "../../quantidade_produto/desktop/quantidade_produto_desktop"
 import { InfoProduto } from "@/infoProduto";
 import useComprarMobile from '../../../togle';
+import { motion } from 'framer-motion';
 
-export default function quantidadeProduto_mobile() {
-const { isOpen, toggleOpen } = useComprarMobile();
+export default function quantidadeProduto_mobile({fechar}) {
+
 
     return (
+         <motion.div 
+      className="painel-quantidade"
+        initial={{ y: '100%' }} // Começa totalmente abaixo da tela
+        animate={{ y: 0 }}       // Sobe para a posição correta
+        exit={{ y: '100%' }}    // Desce totalmente ao fechar
+        transition={{ 
+          type: 'tween',        // Muda para animação linear/baseada em tempo
+          ease: 'easeOut',      // Começa rápido e desacelera suavemente no final
+          duration: 0.3   
+               // Tempo total de subida (0.3 segundos)
+        }} 
+        style={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          backgroundColor: '#fff',
+          zIndex: 999,
+         
+        }}
+        
+      >
+    
 
         <section className={Style.containerQuantidade}>
             <div className={Style.info}>
@@ -16,8 +40,8 @@ const { isOpen, toggleOpen } = useComprarMobile();
                     <img src={InfoProduto.img01} alt="" />
                 </div>
                 <div className={Style.valor}>
-                    <div className={Style.close} onClick={toggleOpen}>
-                        <span class="material-symbols">
+                    <div className={Style.close} onClick={fechar}>
+                        <span className="material-symbols">
                         close
                         </span>
                     </div>
@@ -34,5 +58,6 @@ const { isOpen, toggleOpen } = useComprarMobile();
             </div>
             <div className={Style.comprar}>Compre agora</div>
         </section>
+        </motion.div>
     );
 }

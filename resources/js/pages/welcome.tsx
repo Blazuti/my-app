@@ -30,7 +30,7 @@ export default function Welcome() {
                     )}
                 </>
                     <>
-                    <ValorProduto />
+                    {device === 'mobile' ? <ValorProduto /> : null}
                     </>
                 <>{device === 'mobile' ? <DescricaoProduto /> : ''}</>
 
