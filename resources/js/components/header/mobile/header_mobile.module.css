@@ -54,7 +54,7 @@ input::placeholder {
     opacity: 1; /* Firefox */
 }
 
-input {
+form .mobile {
     background-image: url("../../../../../storage/app/public/image/lupa.svg");
     background-size: 20px;
     background-repeat: no-repeat;
