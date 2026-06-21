@@ -7,4 +7,6 @@ Route::inertia('/', 'welcome', [
     'canRegister' => Features::enabled(Features::registration()),
 ])->name('home');
 
+Route::inertia('/pagamento', 'pagamento')->name('pagamento');
+
 

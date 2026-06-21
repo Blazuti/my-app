@@ -20,7 +20,7 @@
     @viteReactRefresh
     @vite(['resources/css/app.css', 'resources/js/app.tsx'])
     
-        <title>Shopee</title>
+        <title>Shopee Brasil</title>
 </head>
 
 <body>

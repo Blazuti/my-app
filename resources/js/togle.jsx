@@ -1,6 +1,6 @@
 import react from 'react';
 import { useState } from 'react';
-import QuantidadeProduto from "./components/quantidade_produto/mobile/quantidadeProduto_mobile"
+import QuantidadeProduto from "./components/welcome/quantidade_produto/mobile/quantidadeProduto_mobile"
 
 export default function useComprarMobile() {
 

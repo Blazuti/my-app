@@ -25,6 +25,14 @@ html {
     overflow-x: hidden;
 }
 
+::-moz-selection {
+  background: transparent;
+}
+
+::selection {
+  background: transparent; 
+}
+
 @media screen and (min-width: 768px) and (min-height: 500px) {
     .main-section {
         width: 80%;

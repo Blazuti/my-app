@@ -1,0 +1,64 @@
+
+.containerHeader {
+    width: 100vw;
+    height: 70px;
+    margin-top: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: fixed;
+    top: -10px;
+    left: 0;
+    z-index: 1000;
+}
+
+.mobile {
+    height: 100%;
+    border: none;
+    background-image: url('../../../../storage/app/public/image/lupa.svg');
+    background-color: transparent;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 30px;
+    outline: none;
+}
+
+.containerHeader [class^='material-symbols'] {
+    font-family: 'Material Symbols';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px; /* Preferred icon size */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.371);
+    padding: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+}
+
+.busca {
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+input::placeholder {
+    color: var(--cor-cinza-claro);
+    opacity: 1; /* Firefox */
+}
+
+form .mobile {
+    background-image: url("../../../../../storage/app/public/image/lupa.svg");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
