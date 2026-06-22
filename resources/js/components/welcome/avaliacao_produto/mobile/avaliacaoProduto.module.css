@@ -41,7 +41,7 @@ p {
     width: 120%;
     height: 180px;
     margin-top: 10px;
-    background-image: url('../../../../../storage/app/public/image/avaliacao_produto.png');
+    background-image: url('../../../../../../storage/app/public/image/avaliacao_produto.png');
     background-size: contain;
     background-position: left;
     background-repeat: no-repeat;

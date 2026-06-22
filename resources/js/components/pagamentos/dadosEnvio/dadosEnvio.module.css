@@ -1,0 +1,144 @@
+/* Cores e Configurações Shopee */
+.formContainer {
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 4px;
+    box-shadow: 0 1px 12px 0 rgba(0,0,0,.06);
+    padding: 30px 24px;
+    margin: 20px auto;
+    color: #222;
+    font-family: -apple-system, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+}
+
+.formHeader {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.formHeader h2 {
+    color: #ee4d2d; /* Laranja Shopee */
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.formHeader p {
+    color: #757575;
+    font-size: 0.875rem;
+}
+
+.formGroup {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+}
+
+.formRowCep {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: end;
+}
+
+.formContainer label {
+    display: block;
+    font-size: 0.875rem;
+    color: #333;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.formContainer input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 2px;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fff;
+}
+
+.formContainer input:focus {
+    border-color: #ee4d2d;
+    box-shadow: 0 0 0 2px #fff5f3;
+}
+
+/* Validação Visual com CSS Puro para campos nativos (Nome, Celular, Rua) */
+.formContainer input:not(:placeholder-shown):not(:focus):invalid {
+    border-color: #ff424e;
+    background-color: #fffbfa;
+}
+
+.formContainer input:not(:placeholder-shown):not(:focus):invalid + .errorMessage {
+    display: block;
+}
+
+/* Classe forçada via React para erros customizados (CPF e CEP inválidos) */
+.inputInvalid {
+    border-color: #ff424e !important;
+    background-color: #fffbfa;
+}
+
+.errorMessage {
+    display: none;
+    color: #ff424e;
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
+.showError {
+    display: block;
+    color: #ff424e;
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
+/* Botão Buscar CEP */
+.btnCep {
+    background: transparent;
+    border: 1px solid #ee4d2d;
+    color: #ee4d2d;
+    padding: 12px 15px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    transition: background 0.2s;
+    height: 45px;
+}
+
+.btnCep:hover {
+    background: #fff5f3;
+}
+
+/* Botão Enviar Shopee */
+.btnSubmit {
+    width: 100%;
+    background-color: #ee4d2d;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgba(0,0,0,.09);
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.btnSubmit:hover {
+    background-color: #d74426;
+}
+
+.loading {
+    opacity: 0.5;
+    pointer-events: none;
+}

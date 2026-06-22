@@ -3,6 +3,7 @@ import Style from "./quantidadeProduto.module.css"
 import CorProduto from "../../cor_produto/desktop/cor_produto_desktop"
 import Quantidade from "../../quantidade_produto/desktop/quantidade_produto_desktop"
 import { InfoProduto } from "@/infoProduto";
+import { Link } from '@inertiajs/react';
 import useComprarMobile from '../../../../togle';
 import { motion } from 'framer-motion';
 
@@ -56,7 +57,9 @@ export default function quantidadeProduto_mobile({fechar}) {
                 <CorProduto/>
                 <Quantidade/>
             </div>
-            <div className={Style.comprar}>Compre agora</div>
+            <Link href="/pagamento" style={{ textDecoration: 'none' }}>
+                <div className={Style.comprar}>Compre agora</div>
+            </Link>
         </section>
         </motion.div>
     );

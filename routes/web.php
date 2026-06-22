@@ -5,7 +5,7 @@ use Laravel\Fortify\Features;
 
 Route::inertia('/', 'welcome', [
     'canRegister' => Features::enabled(Features::registration()),
-])->name('home');
+])->name('welcome');
 
 Route::inertia('/pagamento', 'pagamento')->name('pagamento');
 

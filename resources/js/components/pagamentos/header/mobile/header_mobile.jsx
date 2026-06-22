@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import Style from './header_mobile.module.css';
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Link } from '@inertiajs/react';
 const Shopee = 'https://shopee.com.br/list/';
 
 export default function Header() {
@@ -49,7 +50,7 @@ export default function Header() {
             className={Style.containerHeader}
             style={{ background: bg, boxShadow: shadow }}
         >
-            <motion.span className="material-symbols" style={{ color: iconColor, background: back }}>arrow_back</motion.span>
+            <Link href={"/"}><motion.span className="material-symbols" style={{ color: iconColor, background: back }}>arrow_back</motion.span></Link>
 
             <div className={Style.busca}>
                 <form onSubmit={fazBusca}>
