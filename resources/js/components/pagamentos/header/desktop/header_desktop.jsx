@@ -20,7 +20,7 @@ export default function Header_desktop() {
     return (
         <>
             <div className={Style.containerHeader}>
-                {<img src={Img01} alt="Header Image" />}
+                <img src={Img01} alt="Header Image" />
                 <div className={Style.buscaHeader}>
                     <img src={Logo} alt="" />
                     <div className={Style.containerInput}>
