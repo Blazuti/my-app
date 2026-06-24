@@ -1,6 +1,7 @@
 import React from 'react';
 import Style from './vendedor.module.css';
 import {InfoProduto} from '@/infoProduto'
+const pagVendedor = `${InfoProduto.PagVendedor}`
 
 export default function Vendedor() {
     return (
@@ -16,9 +17,11 @@ export default function Vendedor() {
                             <p>Ativo há 15 minutos</p>
                         </span>
                     </div>
-                    <div className={Style.verLoja}>
-                        <p>Ver loja</p>
-                    </div>
+                    <a href={pagVendedor} target='_blank'>
+                        <div className={Style.verLoja}>
+                            <p>Ver loja</p>
+                        </div>
+                    </a>
                 </div>
                 <div className={Style.infoVendedor}>
                     <div className={Style.containerVendedor}>

@@ -79,3 +79,8 @@
     border-left: 1px solid #888;
     border-right: 1px solid #888;
 }
+
+.containerImg a{
+    text-decoration: none;
+    color: inherit;
+}

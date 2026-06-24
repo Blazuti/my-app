@@ -132,7 +132,8 @@ export default function ImagemProduto_desktop() {
                 <DescricaoProduto />
                 <div className={Style.avaliacaoProduto}>
                     <div className={Style.avaliacaoProdutoContainer}>
-                        <span className={Style.title}>4</span>
+                        <span className={Style.title}>5</span>
+                        <span className="material-symbols-outlined">star</span>
                         <span className="material-symbols-outlined">star</span>
                         <span className="material-symbols-outlined">star</span>
                         <span className="material-symbols-outlined">star</span>

@@ -23,26 +23,11 @@
 }
 
 
-.branco {
-    background-image: url('https://down-br.img.susercontent.com/file/sg-11134201-825au-mev9m7rv0dmqae@resize_w900_nl.webp');
+.icsee, .yoosee {
+    background-image: url('https://down-br.img.susercontent.com/file/br-11134207-820m2-mldoez0opm2u79@resize_w900_nl.webp');
 }
 
-.preto {
-    background-image: url('https://down-br.img.susercontent.com/file/sg-11134201-825a0-mev9mf7ucxs258@resize_w900_nl.webp');
-}
-
-.azul {
-    background-image: url('https://down-br.img.susercontent.com/file/sg-11134201-825b0-mev9mac2445c79@resize_w900_nl.webp');
-}
-
-.vermelho {
-    background-image: url('https://down-br.img.susercontent.com/file/sg-11134201-825at-mev9m8v51fyc93@resize_w900_nl.webp');
-}
-
-.verde {
-    background-image: url('https://down-br.img.susercontent.com/file/sg-11134201-82588-mev9mbhi53pg18@resize_w900_nl.webp');
-}
-.branco, .preto, .azul, .vermelho, .verde {
+.icsee, .yoosee {
     background-size: cover;
     width: 20px;
     height: 20px;

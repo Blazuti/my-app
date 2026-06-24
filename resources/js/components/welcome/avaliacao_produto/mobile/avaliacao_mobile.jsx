@@ -1,6 +1,6 @@
 import React from 'react';
 import Style from './avaliacaoProduto.module.css';
-
+import img001 from "../../../../../../storage/app/public/image/image-avaliacao-desk/img004-mobile.png"
 
 export default function AvaliacaoProduto() {
     return (
@@ -17,7 +17,7 @@ export default function AvaliacaoProduto() {
                 </div>
             </div>
             <div className={Style.fotoAvaliacao}>
-                
+                <img src={img001} alt="" />
             </div>
             <div className={Style.verTudo}>
                 <span>Ver tudo</span>

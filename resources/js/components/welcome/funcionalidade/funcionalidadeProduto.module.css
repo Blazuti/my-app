@@ -1,10 +1,16 @@
+
 .funcionalidadeProduto {
+    width: 80%;
     background-color: #fff;
     line-height: 1.2;
     padding: 10px;
 }
-p {
+.funcionalidadeProduto p {
     margin-bottom: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+
 }
 
 h5 {
@@ -19,4 +25,19 @@ summary {
     border-top: 1px solid #ccc;
     padding: 10px;
     cursor: pointer;
+}
+
+.containerImg img{
+    display: none;
+}
+
+.funcionalidadeProduto h6 {
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) and (min-height: 500px) {
+    .containerImg img {
+        display: block;
+        width: 78%;
+    }
 }

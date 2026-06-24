@@ -1,57 +1,58 @@
 import React from 'react';
 import Style from './funcionalidadeProduto.module.css';
+import img001 from "../../../../../storage/app/public/image/detalhes-produto.png"
 
 export default function FuncionalidadeProduto() {
     return (
-        <>
+        <section className={Style.funcionalidade}>
+        <div className={Style.containerImg}>
+            <img src={img001} alt="" />
+        </div>
             <div className={Style.funcionalidadeProduto}>
                 <h5>Descrição Do Produto</h5>
-                <p>Sistema operacional Android 14, One UI 6.1</p>
-                <p>Tamanho da memória RAM instalada 12 GB</p>
-                <p>Modelo da CPU Snapdragon</p>
-                <p>Velocidade da CPU 2,6 GHz</p>
-                <p>Capacidade de armazenamento de memória 512 GB</p>
-                <p>Tamanho da tela 7,3 polegadas</p>
-                <p>Taxa de atualização 120 Hz</p>
-                <p>Nome do modelo S24 Ultra</p>
-                <p>Operadora sem fio desbloqueada para todas as operadoras</p>
+                <p>Garanta a segurança total do seu patrimônio com a Câmera de Segurança IP Lente Dupla Leboss LB-CA245. Projetada para oferecer monitoramento de alta precisão, esta câmera é a solução perfeita para proteger sua casa ou comércio, permitindo acesso remoto em tempo real diretamente da palma da sua mão através do aplicativo iCSee.
 
+</p>
+                <p>Principais Funções:</p>
+                <p>Monitoramento Amplo: Graças ao controle PTZ, você pode movimentar a câmera horizontalmente e verticalmente, garantindo que nenhum ângulo passe despercebido.</p>
+                <p>Detecção Inteligente: O sensor de movimento integrado identifica atividades suspeitas e ajuda a manter a segurança do ambiente.</p>
+                <p>Segurança 24 horas: Equipada com visão noturna, garante imagens nítidas mesmo em ambientes com total ausência de luz.</p>
+                <p>Uso Externo e Interno: Construção robusta para suportar as variações climáticas, ideal para instalação em fachadas, quintais ou áreas internas.</p>
+                
                 <details>
                     <summary>Ver Mais</summary>
-                    <p>SO: Android 14, One Ul 6.1</p>
-                    <p>RAM: 12 GB</p>
-                    <p>Tecnologias de comunicação sem fio: Celular</p>
+                    <h6>Especificações Técnicas:</h6>
+                    <p>Marca: Leboss</p>
+                    <p>Modelo: LB-CA245</p>
                     <p>
-                        Tecnologias de conectividade: 5G, Bluetooth, Wi-Fi, USB
+                       Aplicativo de Gerenciamento: iCSee
                     </p>
-                    <p>GPS: TRUE</p>
+                    <p>Resistência: Certificação IP66 (Resistente à água e poeira)</p>
                     <p>
-                        Recursos especiais: Suporte para carregamento rápido,
-                        Aways On Display, carregamento sem fio, GPS integrado,
-                        resistente à água
+                        Controle de Movimento: PTZ (Pan-Tilt-Zoom)
                     </p>
-                    <p>Outros recursos de exibição: Sem fio</p>
+                    <p>Conectividade: Protocolo Wi-Fi IEE 802.1 b/g/n</p>
                     <p>
-                        Entrada de interface humana: Tela sensível ao toque,
-                        microfone. Botões
+                        Visão Noturna: Sim
                     </p>
-                    <p>Outros recursos da câmera: Traseira Frontal</p>
-                    <p>Conector de áudio: USB-C</p>
-                    <p>Forma: Barra</p>
-                    <p>Cor: Preto, prata, dourado</p>
-                    <p>Classificação de energia da bateria: 8000</p>
-                    <p>Tempo de conversação telefônica: 45 horas</p>
+                    <p>Armazenamento: Suporte para Cartão MicroSD (Máximo de 128G)</p>
+                    <p>Resolução de Vídeo: Suporta 1MP / 1.3MP / 2MP</p>
+                    <p>Sensor: Sensor de movimento integrado</p>
+                    <h6>Perguntas Frequentes (FAQ):</h6>
+                    <p>P: A câmera precisa de internet para funcionar?
+
+</p>
+                    <p>R: Sim, para acessar as imagens em tempo real e receber notificações pelo aplicativo, é necessário conectá-la a uma rede Wi-Fi.</p>
                     <p>
-                        O que vem na caixa: S24 Ultra. Cabo USB-C. Ejetor
-                        SlMTray, Guia de início rápido, Caneta
+                       P: O cartão de memória já vem com a câmera?
                     </p>
-                    <p>Capacidade de armazenamento de memória: 512 GB</p>
-                    <p>Tamanho da tela em pé: 7,3 polegadas</p>
-                    <p>Tamanho da memória RAM instalada: 12 GB</p>
-                    <p>Peso: 233 gramas</p>
-                    <p>Tempo de carregamento: 59 minutos</p>
+                    <p>R: Não, o cartão MicroSD (suporta até 128GB) deve ser adquirido separadamente.</p>
+                    <p>P: Qual aplicativo devo baixar no celular?</p>
+                    <p>R: A câmera utiliza o aplicativo "iCSee", que pode ser baixado gratuitamente nas lojas de aplicativos do seu smartphone.</p>
+                    <p>P: Posso instalar a câmera em locais onde toma chuva?</p>
+                    <p>R: Sim! A câmera possui proteção IP66, o que significa que é totalmente resistente à água e poeira.</p>
                 </details>
             </div>
-        </>
+        </section>
     );
 }

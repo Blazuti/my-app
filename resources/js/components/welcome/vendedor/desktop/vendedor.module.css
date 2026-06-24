@@ -1,18 +1,18 @@
 .vendedor {
     margin-top: 10px;
     width: 100%;
-    height: 100px;
+    height: 120px;
     display: flex;
 }
 
 .descVendedor {
-    width: 40%;
+    width: 45%;
     border-right: 2px solid var(--cor-fundo-cinza);
     display: flex;
 }
 
 .imgVendedor img {
-    width: 90px;
+    width: 80px;
     border-radius: 50%;
 }
 
@@ -55,7 +55,7 @@
 
 .opcoesVendedor {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     margin-top: 10px;
 }
 
@@ -94,12 +94,17 @@
 }
 
 .infoVendedor img {
-    width: 90%;
-    height: auto;
+    width: 100%;
+    max-height: auto;
 }
 
 .infoVendedor {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.visitarLoja a {
+    text-decoration: none;
+    color: initial;
 }

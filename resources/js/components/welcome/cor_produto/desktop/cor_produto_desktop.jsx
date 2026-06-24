@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import Style from './corProduto.module.css';
 
 const opcoesCores = [
-    { classe: Style.preto, label: 'Preto' },
-    { classe: Style.branco, label: 'Branco' },
-    { classe: Style.azul, label: 'Azul' },
-    { classe: Style.vermelho, label: 'Vermelho' },
-    { classe: Style.verde, label: 'Verde' },
+    { classe: Style.icsee, label: 'ICSEE-MICROSD 16GB' },
+    { classe: Style.yoosee, label: 'YOOSEE-MICROSD 16GB' },
+    
 ];
 
 export default function CorProduto() {
@@ -19,7 +17,7 @@ export default function CorProduto() {
     return (
         <section className={Style.containerCorProduto}>
             <div className={Style.corProduto}>
-                <span className={Style.cor}>Cor:</span>
+                <span className={Style.cor}>APP:</span>
                 {opcoesCores.map((cor, index) => (
                     <div
                         key={cor.label}
