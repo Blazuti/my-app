@@ -1,5 +1,5 @@
 .containerCarousel {
-    width: 39%;
+    width: 37%;
     height: auto;
 }
 
@@ -68,6 +68,8 @@
 .containerImg {
     width: 100%;
     height: auto;
+    padding: 2px 0px 0px 0px;
+    margin-left: 7px;
     display: flex;
 }
 

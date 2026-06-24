@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Style from './header_desktop.module.css';
-import Img01 from '../../../../../../storage/app/public/image/header-component.png';
+import Img01 from '../../../../../../storage/app/public/image/header.png';
 import Logo from '../../../../../../storage/app/public/image/logo-shopee.png';
 import Lupa from '../../../../../../storage/app/public/image/serch-component.png'
 import SubNave from '../../../../../../storage/app/public/image/caminho_nav.png';
@@ -20,7 +20,7 @@ export default function Header_desktop() {
     return (
         <>
             <div className={Style.containerHeader}>
-                <img src={Img01} alt="Header Image" />
+                {<img src={Img01} alt="Header Image" />}
                 <div className={Style.buscaHeader}>
                     <img src={Logo} alt="" />
                     <div className={Style.containerInput}>
