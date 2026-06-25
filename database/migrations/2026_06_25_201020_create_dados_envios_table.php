@@ -11,8 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dados_envios', function (Blueprint $table) {
+        Schema::create('dadosEnvio', function (Blueprint $table) {
             $table->id();
+            $table->text('nome');
+            $table->string('cpf', 14);
+            $table->date('data_nac');
+            $table->string('contato', 20);
+            $table->string('cep', 9);
+            $table->text('logradouro');
+            $table->integer('numero');
             $table->timestamps();
         });
     }
@@ -22,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dados_envios');
+        Schema::dropIfExists('dadosEnvio');
     }
 };

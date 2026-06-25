@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\dados_envio;
+use App\Models\dadosEnvio;
 use Illuminate\Http\Request;
 
 class DadosEnvioController extends Controller
@@ -34,7 +34,7 @@ class DadosEnvioController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(dados_envio $dados_envio)
+    public function show(dadosEnvio $dadosEnvio)
     {
         //
     }
@@ -42,7 +42,7 @@ class DadosEnvioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(dados_envio $dados_envio)
+    public function edit(dadosEnvio $dadosEnvio)
     {
         //
     }
@@ -50,7 +50,7 @@ class DadosEnvioController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, dados_envio $dados_envio)
+    public function update(Request $request, dadosEnvio $dadosEnvio)
     {
         //
     }
@@ -58,7 +58,7 @@ class DadosEnvioController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(dados_envio $dados_envio)
+    public function destroy(dadosEnvio $dadosEnvio)
     {
         //
     }
