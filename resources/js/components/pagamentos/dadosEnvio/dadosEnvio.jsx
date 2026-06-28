@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useForm } from '@inertiajs/react';
 import styles from './dadosEnvio.module.css'; // Importação dos estilos
 
 export default function dadosEnvio() {
@@ -154,8 +155,44 @@ export default function dadosEnvio() {
     const nascimentoValido = validarNascimento(formData.nascimento);
 
     if (cpfValido && nascimentoValido && !errors.cep) {
-      alert("Cadastro salvo com sucesso.");
-      console.log("Dados enviados:", formData);
+      // Mapeia campos do frontend para os nomes esperados pelo backend
+      const payload = {
+        nome: formData.nome,
+        contato: formData.celular.replace(/\D/g, ''),
+        cpf: formData.cpf.replace(/\D/g, ''),
+        data_nasc: formData.nascimento,
+        cep: formData.cep.replace(/\D/g, ''),
+        logradouro: formData.rua,
+        numero: formData.numero,
+        complemento: formData.complemento,
+      };
+
+      const csrf = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+
+      fetch('/dados-envio', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'X-CSRF-TOKEN': csrf || '',
+        },
+        body: JSON.stringify(payload),
+      })
+        .then(async (res) => {
+          if (!res.ok) {
+            const data = await res.json().catch(() => null);
+            throw data || new Error('Erro ao enviar');
+          }
+          return res.json();
+        })
+        .then((data) => {
+          alert('Cadastro salvo com sucesso.');
+          console.log('Resposta:', data);
+        })
+        .catch((err) => {
+          console.error('Erro ao salvar:', err);
+          alert('Erro ao salvar dados. Verifique o console.');
+        });
     }
   };
 

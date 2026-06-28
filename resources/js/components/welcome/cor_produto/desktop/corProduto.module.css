@@ -14,7 +14,7 @@
 
 .selecionaCor {
     width: max-content;
-    height: 40px;
+    height: fit-content;
     padding-right: 5px;
     border: 1px solid var(--cor-fundo-cinza);
     border-radius: 3px;

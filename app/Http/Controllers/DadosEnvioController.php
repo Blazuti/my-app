@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\dadosEnvio;
-use Illuminate\Http\Request;
+use App\Http\Requests\DadosEnvioRequest;
 
 class DadosEnvioController extends Controller
 {
@@ -26,9 +26,11 @@ class DadosEnvioController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(DadosEnvioRequest $request)
     {
-        //
+        $data = $request->validated();
+        $dados = dadosEnvio::create($data);
+        return response()->json($dados, 201);
     }
 
     /**
@@ -50,9 +52,10 @@ class DadosEnvioController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, dadosEnvio $dadosEnvio)
+    public function update(DadosEnvioRequest $request, dadosEnvio $dadosEnvio)
     {
-        //
+        $dadosEnvio->update($request->validated());
+        return response()->json($dadosEnvio);
     }
 
     /**
