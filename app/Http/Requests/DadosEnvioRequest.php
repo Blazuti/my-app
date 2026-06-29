@@ -34,14 +34,11 @@ class DadosEnvioRequest extends FormRequest
      */
     public function rules(): array
     {
-        $cpfUnique = Rule::unique('dadosEnvio', 'cpf');
-        if ($this->route('dadosEnvio')) {
-            $cpfUnique = $cpfUnique->ignore($this->route('dadosEnvio')->id ?? null);
-        }
+        
 
         return [
             'nome' => ['required', 'string', 'min:2', 'max:100'],
-            'cpf' => array_merge(['required', 'digits:11'], [$cpfUnique]),
+            'cpf' => array_merge(['required', 'digits:11']),
             'data_nasc' => ['required', 'date', 'before_or_equal:today', 'after:1870-01-01'],
             'contato' => ['required', 'digits_between:8,15'],
             'cep' => ['required', 'digits:8'],

@@ -1,45 +1,78 @@
 import React, { useEffect, useState } from "react";
 import Style from "./finalizaPagamento_desk.module.css"
+import { InfoProduto } from "@/infoProduto";
 
-export default function finalizaPagamento() {
-    const [dadosEnvio, setDadosEnvio] = useState({
-        nome: '',
-        cpf: '',
-        telefone: '',
-        cep: '',
-    });
-    const [loading, setLoading] = useState(true);
+const formatarCPF = (valor = '') => {
+    const apenasNumeros = String(valor).replace(/\D/g, '').slice(0, 11);
+    if (!apenasNumeros) return '';
+
+    return apenasNumeros.replace(/(\d{3})(\d)/, '$1.$2')
+        .replace(/(\d{3})(\d)/, '$1.$2')
+        .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+};
+
+const formatarCEP = (valor = '') => {
+    const apenasNumeros = String(valor).replace(/\D/g, '').slice(0, 8);
+    if (!apenasNumeros) return '';
+
+    return apenasNumeros.replace(/(\d{5})(\d)/, '$1-$2');
+};
+
+export default function finalizaPagamento({ onEditar }) {
+    const [dadosEnvio, setDadosEnvio] = useState({ nome: '', cpf: '', cep: '' });
 
     useEffect(() => {
-        fetch('/dados-envio')
-            .then((res) => {
-                if (!res.ok) throw new Error('Não foi possível carregar os dados');
-                return res.json();
-            })
-            .then((data) => {
+        const carregarResumo = () => {
+            if (typeof window === 'undefined') return;
+
+            try {
+                const salvo = JSON.parse(localStorage.getItem('dadosEnvioResumo') || '{}');
                 setDadosEnvio({
-                    nome: data.nome || '',
-                    cpf: data.cpf || '',
-                    telefone: data.contato || '',
-                    cep: data.cep || '',
+                    nome: salvo.nome || '',
+                    cpf: salvo.cpf || '',
+                    cep: salvo.cep || '',
                 });
-            })
-            .catch(() => {
-                setDadosEnvio({ nome: '', cpf: '', telefone: '', cep: '' });
-            })
-            .finally(() => setLoading(false));
+            } catch (error) {
+                console.error('Erro ao carregar resumo:', error);
+            }
+        };
+
+        carregarResumo();
+        window.addEventListener('dados-envio-salvo', carregarResumo);
+
+        return () => {
+            window.removeEventListener('dados-envio-salvo', carregarResumo);
+        };
     }, []);
 
     return (
-        <>
-            <div className={Style.dadosEnvio}>
-                <div className={Style.dadosEnvioLinha}>
-                    <span><strong>Nome:</strong> {loading ? 'Carregando...' : dadosEnvio.nome || 'Não informado'}</span>
-                    <span><strong>CPF:</strong> {loading ? 'Carregando...' : dadosEnvio.cpf || 'Não informado'}</span>
-                    <span><strong>Telefone:</strong> {loading ? 'Carregando...' : dadosEnvio.telefone || 'Não informado'}</span>
-                    <span><strong>CEP:</strong> {loading ? 'Carregando...' : dadosEnvio.cep || 'Não informado'}</span>
+        <section className={Style.finalizaPagamento}>
+            <div className={Style.containerDadosEnvio}>
+                <div className={Style.headerResumo}>
+                    <h3>Resumo do pedido</h3>
+                    <button type="button" className={Style.btnEditar} onClick={onEditar}>
+                        Editar dados
+                    </button>
+                </div>
+                <p><strong>Nome</strong><span>{dadosEnvio.nome || 'Ainda não informado'}</span></p>
+                <p><strong>CPF</strong><span>{formatarCPF(dadosEnvio.cpf) || 'Ainda não informado'}</span></p>
+                <p><strong>CEP</strong><span>{formatarCEP(dadosEnvio.cep) || 'Ainda não informado'}</span></p>
+                <div className={Style.frete}>
+                    <span className="material-symbols">
+                            delivery_truck_speed
+                        </span>
+                        <span>Frete Grátis</span>
                 </div>
             </div>
-        </>
+
+            <div className={Style.containerInfoProduto}>
+                <img src={InfoProduto.img01} alt="" />
+                <span className={Style.descricaoProduto}>
+                    {InfoProduto.DescricaoProduto}
+                </span>
+                <span className={Style.preco}>{InfoProduto.Moeda}{InfoProduto.Valor}</span>
+                <span className={Style.quantidade}></span>
+            </div>
+        </section>
     );
 }

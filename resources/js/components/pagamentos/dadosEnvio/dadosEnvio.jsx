@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from '@inertiajs/react';
 import styles from './dadosEnvio.module.css'; // Importação dos estilos
 
-export default function dadosEnvio() {
+export default function dadosEnvio({ onSuccess }) {
   const [formData, setFormData] = useState({
     nome: '',
     celular: '',
@@ -21,6 +21,19 @@ export default function dadosEnvio() {
   });
 
   const [loadingCep, setLoadingCep] = useState(false);
+
+  const salvarResumoLocal = (dados) => {
+    if (typeof window === 'undefined') return;
+
+    const resumo = {
+      nome: dados?.nome || formData.nome,
+      cpf: dados?.cpf || formData.cpf,
+      cep: dados?.cep || formData.cep,
+    };
+
+    localStorage.setItem('dadosEnvioResumo', JSON.stringify(resumo));
+    window.dispatchEvent(new CustomEvent('dados-envio-salvo'));
+  };
 
   // --- Máscaras de Input ---
   const aplicarMascaraCelular = (value) => {
@@ -187,7 +200,11 @@ export default function dadosEnvio() {
         })
         .then((data) => {
           alert('Cadastro salvo com sucesso.');
+          salvarResumoLocal(data);
           console.log('Resposta:', data);
+          if (typeof onSuccess === 'function') {
+            onSuccess();
+          }
         })
         .catch((err) => {
           console.error('Erro ao salvar:', err);

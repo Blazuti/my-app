@@ -49,9 +49,7 @@ export default function Header_desktop() {
                     <span className="material-symbols">shopping_cart</span>
                 </div>
             </div>
-            <div className={Style.subNave}>
-                <img src={SubNave} alt="Subnav" />
-            </div>
+            
         </>
     );
 }

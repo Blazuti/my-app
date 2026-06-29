@@ -1,23 +1,126 @@
-.dadosEnvio {
-  padding: 1rem;
-  background: #fff;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.05);
-}
-
-.dadosEnvioLinha {
+.finalizaPagamento {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: center;
   align-items: center;
-  font-size: 0.95rem;
-  color: #1f2937;
+  padding: 24px 16px 40px;
+  background: #f5f5f5;
+  flex-flow: column nowrap;
 }
 
-.dadosEnvioLinha span {
-  min-width: 180px;
+.containerDadosEnvio {
+  width: 90%;
+  max-width: 90%;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 20px 24px;
 }
 
-.dadosEnvioLinha strong {
-  color: #111827;
+.headerResumo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.headerResumo h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #222;
+  font-weight: 700;
+}
+
+.btnEditar {
+  border: none;
+  background: #ff5e1f;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btnEditar:hover {
+  background: #e64f13;
+}
+
+.containerDadosEnvio p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  margin: 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.containerDadosEnvio p:last-child {
+  border-bottom: none;
+}
+
+.containerDadosEnvio strong {
+  color: #ff5e1f;
+  font-weight: 700;
+  min-width: 70px;
+}
+
+.containerDadosEnvio span {
+  text-align: right;
+  color: #444;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.frete {
+    width: 200px;
+    display: flex;
+    align-self: flex-start;
+}
+
+.frete span {
+    color: var(--cor-verde);
+    font-weight: 500;
+}
+
+.containerInfoProduto{
+  width: 90%;
+  max-width: 90%;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 20px 24px;
+
+  display: flex;
+}
+
+.containerInfoProduto span {
+    margin: 20px 0px 0px 10px;
+}
+
+.containerInfoProduto img {
+    width: 10%;
+}
+
+.descricaoProduto {
+    width: 30%;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.preco {
+    width: 300px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
