@@ -1,0 +1,23 @@
+.dadosEnvio {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.05);
+}
+
+.dadosEnvioLinha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #1f2937;
+}
+
+.dadosEnvioLinha span {
+  min-width: 180px;
+}
+
+.dadosEnvioLinha strong {
+  color: #111827;
+}
