@@ -17,7 +17,9 @@ export const InfoProduto = {
 
     NomeVendedor: 'Super Vida_BR',
 
-    Valor: '79,38',
+    Valor: 79.38,
+
+    formatoBr : (numero) => numero.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
 
     ValorAnterior: '158,76',
 

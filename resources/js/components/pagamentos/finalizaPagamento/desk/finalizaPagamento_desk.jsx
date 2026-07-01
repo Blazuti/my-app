@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Style from "./finalizaPagamento_desk.module.css"
 import { InfoProduto } from "@/infoProduto";
+import ProdutoIndicado from "../../produtoIndicado/produtoIndicado";
+import useAlternaDevice from '@/hooks/alterna_device';
+import Rodape from "../../../welcome/rodape/rodape";
 
 const formatarCPF = (valor = '') => {
     const apenasNumeros = String(valor).replace(/\D/g, '').slice(0, 11);
@@ -20,6 +23,7 @@ const formatarCEP = (valor = '') => {
 
 export default function finalizaPagamento({ onEditar }) {
     const [dadosEnvio, setDadosEnvio] = useState({ nome: '', cpf: '', cep: '' });
+    const [quantidade, setQuantidade] = useState(1);
 
     useEffect(() => {
         const carregarResumo = () => {
@@ -44,6 +48,20 @@ export default function finalizaPagamento({ onEditar }) {
             window.removeEventListener('dados-envio-salvo', carregarResumo);
         };
     }, []);
+
+    const handleQuantidadeChange = (event) => {
+        const valor = Number(event.target.value);
+        if (Number.isNaN(valor)) {
+            setQuantidade(1);
+            return;
+        }
+
+        setQuantidade(Math.max(1, valor));
+    };
+
+    const total = Number(InfoProduto.Valor || 0) * quantidade;
+
+    const device = useAlternaDevice();
 
     return (
         <section className={Style.finalizaPagamento}>
@@ -70,9 +88,28 @@ export default function finalizaPagamento({ onEditar }) {
                 <span className={Style.descricaoProduto}>
                     {InfoProduto.DescricaoProduto}
                 </span>
-                <span className={Style.preco}>{InfoProduto.Moeda}{InfoProduto.Valor}</span>
-                <span className={Style.quantidade}></span>
+                <span className={Style.preco}>{InfoProduto.Moeda}{InfoProduto.formatoBr(InfoProduto.Valor)}</span>
+                <div className={`${Style.quantidade} ${Style.preco}`}>
+                    <label htmlFor="quantidade" className={Style.srOnly}>Quantidade</label>
+                    <input
+                        id="quantidade"
+                        type="number"
+                        min="1"
+                        value={quantidade}
+                        onChange={handleQuantidadeChange}
+                        className={Style.quantidadeInput}
+                    />
+                </div>
+                <div className={`${Style.total} ${Style.preco}`}>Total: {InfoProduto.Moeda}{InfoProduto.formatoBr(total)}</div>
             </div>
+                <button type="button" className={Style.btnContinuarCompra}>
+                    Continuar compra
+                </button>
+
+            {device === 'mobile'? null : <ProdutoIndicado />}
+
+            <Rodape />
+            
         </section>
     );
 }

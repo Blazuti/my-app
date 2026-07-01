@@ -4,6 +4,7 @@ import Rodape from "@/components/welcome/rodape/rodape";
 import HeaderMobile from "../components/pagamentos/header/mobile/header_mobile";
 import DadosEnvioMobile from "../components/pagamentos/dadosEnvio/dadosEnvio";
 import FinalizaPagamentoDesk from "../components/pagamentos/finalizaPagamento/desk/finalizaPagamento_desk";
+
 import useAlternaDevice from '@/hooks/alterna_device';
 
 export default function Pagamento() {
@@ -18,7 +19,8 @@ export default function Pagamento() {
             ) : (
                 <FinalizaPagamentoDesk onEditar={() => setMostrarResumo(false)} />
             )}
-            <Rodape />
+
+            
         </>
     );
 }

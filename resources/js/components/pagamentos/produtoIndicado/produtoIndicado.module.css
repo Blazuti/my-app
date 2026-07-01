@@ -1,0 +1,13 @@
+
+
+@media screen and (min-width: 768px) and (min-height: 500px) {
+.containerProdutoIndicado {
+    width: 90%;
+}
+
+.containerImgProduto img {
+    width: 100%;
+    cursor: pointer;
+}
+
+}

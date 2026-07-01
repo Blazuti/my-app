@@ -5,6 +5,7 @@ import styles from './dadosEnvio.module.css'; // Importação dos estilos
 export default function dadosEnvio({ onSuccess }) {
   const [formData, setFormData] = useState({
     nome: '',
+    email: '',
     celular: '',
     cpf: '',
     nascimento: '',
@@ -18,6 +19,7 @@ export default function dadosEnvio({ onSuccess }) {
     cpf: '',
     nascimento: '',
     cep: '',
+    email: '',
   });
 
   const [loadingCep, setLoadingCep] = useState(false);
@@ -75,6 +77,20 @@ export default function dadosEnvio({ onSuccess }) {
     if (id === 'cpf') setErrors((prev) => ({ ...prev, cpf: '' }));
     if (id === 'cep') setErrors((prev) => ({ ...prev, cep: '' }));
     if (id === 'nascimento') setErrors((prev) => ({ ...prev, nascimento: '' }));
+    if (id === 'email') setErrors((prev) => ({ ...prev, email: '' }));
+  };
+
+  const validarEmail = (valor) => {
+    const email = valor.trim();
+
+    if (!email) {
+      setErrors((prev) => ({ ...prev, email: 'E-mail é obrigatório' }));
+      return false;
+    }
+
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i.test(email);
+    setErrors((prev) => ({ ...prev, email: emailValido ? '' : 'Informe um e-mail válido' }));
+    return emailValido;
   };
 
   // --- Validação Matemática do CPF ---
@@ -166,11 +182,13 @@ export default function dadosEnvio({ onSuccess }) {
 
     const cpfValido = validarCPF(formData.cpf);
     const nascimentoValido = validarNascimento(formData.nascimento);
+    const emailValido = validarEmail(formData.email);
 
-    if (cpfValido && nascimentoValido && !errors.cep) {
+    if (cpfValido && nascimentoValido && emailValido && !errors.cep) {
       // Mapeia campos do frontend para os nomes esperados pelo backend
       const payload = {
         nome: formData.nome,
+        email: formData.email.trim(),
         contato: formData.celular.replace(/\D/g, ''),
         cpf: formData.cpf.replace(/\D/g, ''),
         data_nasc: formData.nascimento,
@@ -234,6 +252,24 @@ export default function dadosEnvio({ onSuccess }) {
             onChange={handleChange}
           />
           <span className={styles.errorMessage}>Por favor, insira seu nome completo.</span>
+        </div>
+
+        {/* E-mail */}
+        <div className={styles.formGroup}>
+          <label htmlFor="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            placeholder=" "
+            required
+            value={formData.email}
+            onChange={handleChange}
+            onBlur={(e) => validarEmail(e.target.value)}
+            className={errors.email ? styles.inputInvalid : ''}
+          />
+          <span className={errors.email ? styles.showError : styles.errorMessage}>
+            {errors.email || 'Informe um e-mail válido.'}
+          </span>
         </div>
 
         {/* Celular */}

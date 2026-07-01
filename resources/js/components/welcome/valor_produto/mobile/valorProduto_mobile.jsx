@@ -13,7 +13,7 @@ export default function ValorProduto() {
             <div className={Style.containerValor}>
                 <div className={Style.grupoValor}>
                     <span className={Style.moeda}>{InfoProduto.Moeda}</span>
-                    <span className={Style.valor}>{InfoProduto.Valor}</span>
+                    <span className={Style.valor}>{InfoProduto.formatoBr(InfoProduto.Valor)}</span>
                     <span className={Style.valorAnterior}>{InfoProduto.ValorAnterior}</span>
                     <span className={Style.desconto}>{InfoProduto.Desconto}</span>
                 </div>
