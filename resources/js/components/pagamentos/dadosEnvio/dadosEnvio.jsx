@@ -29,6 +29,7 @@ export default function dadosEnvio({ onSuccess }) {
 
     const resumo = {
       nome: dados?.nome || formData.nome,
+      email: dados?.email || formData.email,
       cpf: dados?.cpf || formData.cpf,
       cep: dados?.cep || formData.cep,
     };

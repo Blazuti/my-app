@@ -22,7 +22,7 @@ const formatarCEP = (valor = '') => {
 };
 
 export default function finalizaPagamento({ onEditar }) {
-    const [dadosEnvio, setDadosEnvio] = useState({ nome: '', cpf: '', cep: '' });
+    const [dadosEnvio, setDadosEnvio] = useState({ nome: '', cpf: '', cep: '', email: '' });
     const [quantidade, setQuantidade] = useState(1);
 
     useEffect(() => {
@@ -35,6 +35,7 @@ export default function finalizaPagamento({ onEditar }) {
                     nome: salvo.nome || '',
                     cpf: salvo.cpf || '',
                     cep: salvo.cep || '',
+                    email: salvo.email || '',
                 });
             } catch (error) {
                 console.error('Erro ao carregar resumo:', error);
@@ -73,6 +74,7 @@ export default function finalizaPagamento({ onEditar }) {
                     </button>
                 </div>
                 <p><strong>Nome</strong><span>{dadosEnvio.nome || 'Ainda não informado'}</span></p>
+                <p><strong>Email</strong><span>{dadosEnvio.email || 'Ainda não informado'}</span></p>
                 <p><strong>CPF</strong><span>{formatarCPF(dadosEnvio.cpf) || 'Ainda não informado'}</span></p>
                 <p><strong>CEP</strong><span>{formatarCEP(dadosEnvio.cep) || 'Ainda não informado'}</span></p>
                 <div className={Style.frete}>
@@ -84,12 +86,14 @@ export default function finalizaPagamento({ onEditar }) {
             </div>
 
             <div className={Style.containerInfoProduto}>
-                <img src={InfoProduto.img01} alt="" />
-                <span className={Style.descricaoProduto}>
-                    {InfoProduto.DescricaoProduto}
-                </span>
-                <span className={Style.preco}>{InfoProduto.Moeda}{InfoProduto.formatoBr(InfoProduto.Valor)}</span>
+                <div className={Style.containerDescricaoProduto}>
+                    <img src={InfoProduto.img01} alt="" />
+                    <span className={Style.descricaoProduto}>
+                        {InfoProduto.DescricaoProduto}
+                    </span>
+                </div>
                 <div className={`${Style.quantidade} ${Style.preco}`}>
+                    <span className={Style.preco}>{InfoProduto.Moeda}{InfoProduto.formatoBr(InfoProduto.Valor)}</span>
                     <label htmlFor="quantidade" className={Style.srOnly}>Quantidade</label>
                     <input
                         id="quantidade"
@@ -99,16 +103,16 @@ export default function finalizaPagamento({ onEditar }) {
                         onChange={handleQuantidadeChange}
                         className={Style.quantidadeInput}
                     />
-                </div>
                 <div className={`${Style.total} ${Style.preco}`}>Total: {InfoProduto.Moeda}{InfoProduto.formatoBr(total)}</div>
-            </div>
+                </div>
                 <button type="button" className={Style.btnContinuarCompra}>
                     Continuar compra
                 </button>
+            </div>
 
-            {device === 'mobile'? null : <ProdutoIndicado />}
+            <div className={Style.produtoIndicado}>{device === 'mobile'? null : <ProdutoIndicado />}</div>
 
-            <Rodape />
+            {device === 'mobile'? null : <Rodape />}
             
         </section>
     );
