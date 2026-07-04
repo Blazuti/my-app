@@ -108,7 +108,14 @@ export default function finalizaPagamento({ onEditar }) {
                 <button type="button" className={Style.btnContinuarCompra}>
                     Continuar compra
                 </button>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1df2375fe2e78709c872f246cfde0740af1df783
             </div>
+                <div className={Style.containerFormaPagamento}>
+                    {mostrarFormaPagamento && <FormaPagamento valor={Number(total.toFixed(2))} />}
+                </div>
 
             <div className={Style.produtoIndicado}>{device === 'mobile'? null : <ProdutoIndicado />}</div>
 

@@ -1,0 +1,334 @@
+.container {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    margin: 18px 0 0;
+    color: #222;
+    font-family: -apple-system, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.eyebrow {
+    margin: 0 0 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ee4d2d;
+}
+
+.header h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.badge {
+    background: #fff5f3;
+    color: #ee4d2d;
+    border: 1px solid #ffd8cd;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.listaOpcoes {
+    display: grid;
+    gap: 10px;
+}
+
+.opcao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.opcao:hover {
+    border-color: #ee4d2d;
+    box-shadow: 0 2px 8px rgba(238, 77, 45, 0.12);
+    transform: translateY(-1px);
+}
+
+.opcaoSelecionada {
+    border-color: #ee4d2d;
+    background: #fff5f3;
+    box-shadow: 0 2px 10px rgba(238, 77, 45, 0.14);
+}
+
+.radioInput {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.radioVisual {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #c8c8c8;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.radioInput:checked + .radioVisual {
+    border-color: #ee4d2d;
+    background: #ee4d2d;
+    box-shadow: inset 0 0 0 3px #fff;
+}
+
+.conteudo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.icone {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #f7f7f7;
+    font-size: 1.1rem;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.texto strong {
+    font-size: 0.95rem;
+    color: #222;
+}
+
+.texto small {
+    font-size: 0.8rem;
+    color: #757575;
+}
+
+.areaAcao {
+    margin-top: 16px;
+}
+
+.botaoPagamento {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 0;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #ff5a3c 0%, #ee4d2d 100%);
+    color: #fff;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(238, 77, 45, 0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botaoPagamento:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(238, 77, 45, 0.28);
+}
+
+.botaoPagamento:active {
+    transform: translateY(0);
+}
+
+.seta {
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.panelDetalhes {
+    margin-top: 16px;
+    padding: 16px;
+    border: 1px solid #ffd8cd;
+    border-radius: 12px;
+    background: #fffaf8;
+}
+
+.panelHeader {
+    margin-bottom: 12px;
+}
+
+.panelHeader h5 {
+    margin: 0 0 4px;
+    font-size: 0.95rem;
+    color: #222;
+}
+
+.panelHeader p {
+    margin: 0;
+    font-size: 0.84rem;
+    color: #7a5b4f;
+}
+
+.formGrid {
+    display: grid;
+    gap: 12px;
+}
+
+.duplaColuna {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.field input {
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    color: #222;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field input:focus {
+    border-color: #ee4d2d;
+    box-shadow: 0 0 0 3px rgba(238, 77, 45, 0.12);
+}
+
+.qrBox {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    border: 2px dashed #ee4d2d;
+    border-radius: 12px;
+    background: #fff;
+    color: #ee4d2d;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.infoBox {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #f2d5ca;
+    background: #fff;
+    color: #874d33;
+    font-size: 0.85rem;
+}
+
+.botaoConcluir {
+    width: 100%;
+    border: 0;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff5a3c 0%, #ee4d2d 100%);
+    color: #fff;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(238, 77, 45, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botaoConcluir:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(238, 77, 45, 0.24);
+}
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 1000;
+}
+
+.modalContent {
+    width: min(100%, 480px);
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.modalHeader h5 {
+    margin: 0;
+    font-size: 1rem;
+    color: #222;
+}
+
+.modalClose {
+    border: 0;
+    background: transparent;
+    color: #666;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) and (min-height: 500px) {
+    .container {
+        width: 100%;
+        padding: 24px;
+    }
+
+    .header h4 {
+        font-size: 1.1rem;
+    }
+
+    .opcao {
+        padding: 16px 16px;
+    }
+
+    .icone {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+
+    .texto strong {
+        font-size: 1rem;
+    }
+
+    .texto small {
+        font-size: 0.85rem;
+    }
+}

@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'syncpay' => [
+        'base_url' => env('SYNCPAY_BASE_URL', 'https://api.syncpay.com.br'),
+        'client_id' => env('SYNCPAY_CLIENT_ID'),
+        'client_secret' => env('SYNCPAY_CLIENT_SECRET'),
+        'api_key' => env('SYNCPAY_API_KEY'),
+        'webhook_url' => env('SYNCPAY_WEBHOOK_URL'),
+    ],
+
 ];

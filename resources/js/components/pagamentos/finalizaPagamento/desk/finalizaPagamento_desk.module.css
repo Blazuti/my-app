@@ -237,4 +237,15 @@ height: fit-content;
   margin: 20px 0px 40px 0px;
 }
 
+.produtoIndicado{
+  width: 90%;
+}
+
+.containerFormaPagamento{
+  width: 40%;
+  max-width: 90%;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
 }
