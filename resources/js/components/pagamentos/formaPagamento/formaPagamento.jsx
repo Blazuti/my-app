@@ -46,17 +46,18 @@ export default function FormaPagamento({ valor = 0 }) {
         card_cvv: "",
     });
 
+    // Ajustado para sempre forçar a atualização do valor quando a prop mudar
     useEffect(() => {
         const valorAtual = String(valor || "");
 
         setPixFormData((prev) => ({
             ...prev,
-            amount: prev.amount && prev.amount !== "" ? prev.amount : valorAtual,
+            amount: valorAtual,
         }));
 
         setCardFormData((prev) => ({
             ...prev,
-            amount: prev.amount && prev.amount !== "" ? prev.amount : valorAtual,
+            amount: valorAtual,
         }));
     }, [valor]);
 
