@@ -31,7 +31,7 @@ const opcoesPagamento = [
     },
 ];
 
-export default function FormaPagamento({ valor = 0 }) {
+export default function FormaPagamento({ valor = 0, dadosEnvio = {} }) {
     const [formaSelecionada, setFormaSelecionada] = useState("pix");
     const [mostrarDetalhes, setMostrarDetalhes] = useState(true);
     const [pixFormData, setPixFormData] = useState({ ...initialFormData, amount: String(valor || "") });
@@ -45,21 +45,62 @@ export default function FormaPagamento({ valor = 0 }) {
         card_expiry: "",
         card_cvv: "",
     });
+    
+    // CORREÇÃO: Renomeado para dadosEnvioEstado para não conflitar com a prop dadosEnvio
+    const [dadosEnvioEstado, setDadosEnvioEstado] = useState({
+        nome: '',
+        cpf: '',
+        cep: '',
+        email: '',
+        contato:'',
+    });
 
-    // Ajustado para sempre forçar a atualização do valor quando a prop mudar
+    useEffect(() => {
+        const carregarResumo = () => {
+            if (typeof window === 'undefined') return;
+
+            try {
+                const salvo = JSON.parse(
+                    localStorage.getItem('dadosEnvioResumo') || '{}',
+                );
+                setDadosEnvioEstado({
+                    nome: salvo.nome || '',
+                    cpf: salvo.cpf || '',
+                    cep: salvo.cep || '',
+                    email: salvo.email || '',
+                    contato: salvo.contato || '',
+                });
+            } catch (error) {
+                console.error('Erro ao carregar resumo:', error);
+            }
+        };
+
+        carregarResumo();
+        window.addEventListener('dados-envio-salvo', carregarResumo);
+
+        return () => {
+            window.removeEventListener('dados-envio-salvo', carregarResumo);
+        };
+    }, []);
+
+    // Sincroniza tanto o valor quanto os dados vindos da prop dadosEnvio
     useEffect(() => {
         const valorAtual = String(valor || "");
 
         setPixFormData((prev) => ({
             ...prev,
             amount: valorAtual,
+            name: dadosEnvio.nome || prev.name || "",
+            cpf: dadosEnvio.cpf || prev.cpf || "",
+            email: dadosEnvio.email || prev.email || "",
+            phone: dadosEnvio.celular || prev.phone || "",
         }));
 
         setCardFormData((prev) => ({
             ...prev,
             amount: valorAtual,
         }));
-    }, [valor]);
+    }, [valor, dadosEnvio]);
 
     const handleSelecionarForma = (forma) => {
         setFormaSelecionada(forma);
@@ -256,8 +297,9 @@ export default function FormaPagamento({ valor = 0 }) {
                                     type="text"
                                     name="name"
                                     placeholder="Seu nome"
-                                    value={pixFormData.name}
+                                    value={dadosEnvioEstado.nome}
                                     onChange={handlePixInputChange}
+                                    readOnly
                                     required
                                 />
                             </label>
@@ -268,8 +310,9 @@ export default function FormaPagamento({ valor = 0 }) {
                                     type="text"
                                     name="cpf"
                                     placeholder="000.000.000-00"
-                                    value={pixFormData.cpf}
+                                    value={dadosEnvioEstado.cpf}
                                     onChange={handlePixInputChange}
+                                    readOnly
                                     required
                                 />
                             </label>
@@ -280,8 +323,9 @@ export default function FormaPagamento({ valor = 0 }) {
                                     type="email"
                                     name="email"
                                     placeholder="seu@email.com"
-                                    value={pixFormData.email}
+                                    value={dadosEnvioEstado.email}
                                     onChange={handlePixInputChange}
+                                    readOnly
                                     required
                                 />
                             </label>
@@ -292,7 +336,7 @@ export default function FormaPagamento({ valor = 0 }) {
                                     type="text"
                                     name="phone"
                                     placeholder="(11) 99999-9999"
-                                    value={pixFormData.phone}
+                                    value={dadosEnvioEstado.contato}
                                     onChange={handlePixInputChange}
                                     required
                                 />
@@ -368,7 +412,6 @@ export default function FormaPagamento({ valor = 0 }) {
                                 <input
                                     type="text"
                                     name="card_number"
-                                    inputMode="numeric"
                                     placeholder="0000 0000 0000 0000"
                                     value={cardFormData.card_number}
                                     onChange={handleCardInputChange}
@@ -382,7 +425,6 @@ export default function FormaPagamento({ valor = 0 }) {
                                     <input
                                         type="text"
                                         name="card_expiry"
-                                        inputMode="numeric"
                                         placeholder="MM/AA"
                                         value={cardFormData.card_expiry}
                                         onChange={handleCardInputChange}
@@ -394,7 +436,6 @@ export default function FormaPagamento({ valor = 0 }) {
                                     <input
                                         type="text"
                                         name="card_cvv"
-                                        inputMode="numeric"
                                         placeholder="123"
                                         value={cardFormData.card_cvv}
                                         onChange={handleCardInputChange}
