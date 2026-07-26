@@ -333,10 +333,10 @@ export default function FormaPagamento({ valor = 0, dadosEnvio = {} }) {
                             <label className={Style.field}>
                                 <span>Telefone</span>
                                 <input
-                                    type="text"
+                                    type="tel"
                                     name="phone"
                                     placeholder="(11) 99999-9999"
-                                    value={dadosEnvioEstado.contato}
+                                    value={dadosEnvioEstado.celular}
                                     onChange={handlePixInputChange}
                                     required
                                 />
